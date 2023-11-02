@@ -1,0 +1,42 @@
+{
+  "name": "cypress-automation-framework",
+  "version": "1.0.0",
+  "description": "Cypress Cucumber Automation Framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "full-regression-headed-firefox": "cypress run --headed --browser firefox --spec 'cypress/e2e/*.feature'",
+    "full-regression-headedless-firefox": "cypress run --browser firefox --spec 'cypress/e2e/*.feature'",
+    "contact-us-tests-headed-firefox": "cypress run --headed --browser firefox --spec 'cypress/e2e/Contact_us.feature'",
+    "contact-us-tests-headed": "cypress run -e TAGS=\"@contact-us\" --headed",
+    "contact-us-tests-headedless": "cypress run -e TAGS=\"@contact-us\"",
+    "login-and-smoke-pack": "cypress run -e TAGS=\"@smoke or @login\" --headed && node cucumber-html-report.js",
+    "login-tests-headedless": "cypress run -e TAGS=\"@login\""
+  },
+  "author": "Anatolii",
+  "license": "ISC",
+  "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^18.0.6",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
+    "cypress": "^12.17.4",
+    "cypress-xpath": "^2.0.1",
+    "multiple-cucumber-html-reporter": "^3.5.0",
+    "ts-loader": "^9.5.0"
+  },
+  "cypress-cucumber-preprocessor": {
+    "stepDefinitions": "cypress/support/step_definitions/**/*.js",
+    "html": {
+      "enabled": true,
+      "output": "cypress/reports/cucumber-html/cucumber-report.html"
+    },
+    "messages": {
+      "enabled": true,
+      "output": "cypress/reports/cucumber-ndjson/cucumber-report.ndjson"
+    },
+    "json": {
+      "enabled": true,
+      "formatter": "cucumber-json-formatter",
+      "output": "cypress/reports/cucumber-json/cucumber-report.json"
+    }
+  }
+}
