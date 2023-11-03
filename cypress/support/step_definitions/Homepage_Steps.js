@@ -1,10 +1,13 @@
 /// <reference types="cypress" />
 import { Given, When } from "@badeball/cypress-cucumber-preprocessor";
-
-const url = "http://www.webdriveruniversity.com/";
+import Base_PO from "../page-objects/Base_PO";
+//const url = "http://www.webdriveruniversity.com/";
+const basePage = new Base_PO();
 
 Given(`I navigate to the webdriveruniversity homepage`, () => {
-  cy.visit(url);
+  //cy.visit(url);
+  basePage.navigate("");
+  basePage.getPageTitle();
 });
 
 When(`I click on the contact us button`, () => {
