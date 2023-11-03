@@ -8,9 +8,11 @@ Given(`I navigate to the webdriveruniversity homepage`, () => {
 });
 
 When(`I click on the contact us button`, () => {
-  cy.get("#contact-us").invoke("removeAttr", "target").click();
+  //cy.get("#contact-us").invoke("removeAttr", "target").click();
+  cy.clickAndOpenLink_InSameTab("#contact-us");
 });
 
 When(`I click on the login portal button`, () => {
-  cy.get("#login-portal").invoke("removeAttr", "target").click();
+  //cy.get("#login-portal").invoke("removeAttr", "target").click();
+  cy.clickAndOpenLink_InSameTab("#login-portal");
 });
