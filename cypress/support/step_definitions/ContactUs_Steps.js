@@ -4,7 +4,6 @@ import ContactUs_PO from "../page_objects/Contact_Us_PO";
 
 const contactUs_Page = new ContactUs_PO();
 
-
 When("I type a first name", () => {
   // cy.get('[name="first_name"]').type("Noah");
   contactUs_Page.type_FirstName("Noah");
@@ -16,12 +15,12 @@ When("I type a last name", () => {
 
 When("I enter an email address", () => {
   //cy.get('[name="email"]').type("noahhyor@mail.com");
-  contactUs_Page.type_EmailAddress("noahhyor@mail.com")
+  contactUs_Page.type_EmailAddress("noahhyor@mail.com");
 });
 
 When("I type a comment", () => {
   //cy.get('textarea[name="message"]').type("Hello world!");
-  contactUs_Page.type_Comment("Hello world!")
+  contactUs_Page.type_Comment("Hello world!");
 });
 
 When("I click on the submit button", () => {
