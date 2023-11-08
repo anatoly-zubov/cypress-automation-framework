@@ -26,7 +26,7 @@ class ContactUs_PO extends Base_PO {
     }
 
     type_Comment(comment){
-        this.elements.comment_TextField.type(comment);
+        this.elements.comment_TextField().type(comment);
     }
 
     clickOn_Submit_Button(){
@@ -35,7 +35,7 @@ class ContactUs_PO extends Base_PO {
 
     validate_Submission_Header(message){
         this.elements.submission_Header_Text().contains(message);
-        this.elements.submission_Header_Text().inoke('text').should('include', message)
+        this.elements.submission_Header_Text().invoke('text').should('include', message);
     }
 
 
