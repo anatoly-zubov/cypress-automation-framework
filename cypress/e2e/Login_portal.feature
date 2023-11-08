@@ -1,14 +1,6 @@
 @login @regression
 Feature: WebdriverUniversity - Login Portal Page
 
-  # Background: Pre conditions
-  #   Given I navigate to the webdriveruniversity homepage
-  #   When I click on the login portal button
-  #   And I wait for 5 seconds
-    
-    
-    
-
   Scenario Outline: Validate login portal page
     Given I navigate to the webdriveruniversity login page
     And I type a username <username>
